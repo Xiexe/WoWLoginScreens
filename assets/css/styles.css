@@ -1,0 +1,153 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+@font-face{
+    font-family: 'FRITZQUAD';
+    src: url('../fonts/FRIZQUAD.TTF');
+}
+
+#background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translateX(calc((100% - 100vw) / 2));
+    z-index: -1;
+}
+
+#logo {
+    z-index: 1;
+    top: 20px;
+    left: 20px;
+    position: absolute;
+}
+
+#quitButtonContainer {
+    bottom: 10px;
+    right: 10px;
+    position: absolute;
+}
+
+#queueBox {
+    position: fixed;
+    width: 720px;
+}
+
+#queueTextContainer {
+    position: fixed;
+    margin-bottom: 50px;
+    background-color: transparent;
+    width: 650px;
+    height: 110px;
+    line-height: 70%;
+    z-index: 2;
+}
+
+#realmListButton{
+    margin-top: 120px;
+}
+
+#copyrightText {
+    font-family: 'FRITZQUAD';
+    font-size: 15px;
+    text-align: left;
+    color: #ffc700;
+    text-shadow: 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 3px #000;
+}
+
+#buildDate {
+    position: fixed;
+    font-family: 'FRITZQUAD';
+    font-size: 15px;
+    text-align: left;
+    color: #ffc700;
+    text-shadow: 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 3px #000;
+
+    bottom: -8px;
+    left: 10px;
+}
+
+#buildVersion {
+    position: fixed;
+    font-family: 'FRITZQUAD';
+    font-size: 15px;
+    text-align: left;
+    color: #ffc700;
+    text-shadow: 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 3px #000;
+
+    bottom: 10px;
+    left: 10px;
+}
+
+.queueText {
+    font-family: 'FRITZQUAD';
+    font-size: 22px;
+    text-align: center;
+    color: #ffc700;
+    text-shadow: 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 3px #000;
+}
+
+.button {
+    font-family: 'FRITZQUAD';
+    font-size: 23px;
+    text-align: center;
+    color: #ffc700;
+    text-shadow: 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000;
+
+    background: url('../img/ui/buttons/button_idle.png') no-repeat top;
+    width: 270px;
+    height: 71px;
+    border: none;
+    outline: none;
+    display: inline-block;
+    transform: scale(0.8);
+    z-index: 2;
+}
+
+.button:hover {
+    font-family: 'FRITZQUAD';
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000;
+
+    background: url('../img/ui/buttons/button_hover.png') no-repeat top;
+}
+
+.button:active {
+    font-family: 'FRITZQUAD';
+    font-size: 22px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000;
+
+    background: url('../img/ui/buttons/button_pressed.png') no-repeat top;
+}
+
+.centered {
+    min-height: 100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+}
+
+.fullWidth
+{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 40px;
+    z-index: 2;
+}
+
+.foreground {
+    z-index: 1;
+}
