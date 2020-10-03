@@ -34,10 +34,7 @@ html, body {
     z-index: 2;
 }
 
-#queueBox {
-    position: fixed;
-    width: 650px;
-}
+
 
 #queue {
 
@@ -105,6 +102,20 @@ html, body {
     text-align: center;
     color: #ffc700;
     text-shadow: 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 3px #000, 10px 10px 2px #0000;
+}
+
+.UIBox {
+    position: fixed;
+    border: 40px solid;
+    border-image: url('../img/ui/UI_BorderAtlas.png') 40% round;
+    z-index: 1;
+}
+
+.UIBoxBackground 
+{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 0;
 }
 
 .button {
