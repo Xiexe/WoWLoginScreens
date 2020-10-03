@@ -19,13 +19,6 @@ html, body {
     z-index: -1;
 }
 
-#logo {
-    z-index: 1;
-    top: 20px;
-    left: 20px;
-    position: absolute;
-}
-
 #quitButtonContainer {
     bottom: 10px;
     right: 10px;
@@ -150,4 +143,30 @@ html, body {
 
 .foreground {
     z-index: 1;
+}
+
+.xPacButton {
+    z-index: 1;
+    position: absolute;
+    top: -15px;
+    left: -55px;
+    width: 633px;
+    height: 289px;
+    border: none;
+    outline: none;
+    display: inline-block;
+    background: url('../img/ui/logos/Shadowlands.png') no-repeat top;
+    background-color: transparent;
+    transform: scale(0.8);
+    transition: 0.2s;
+}
+
+.xPacButton:hover {
+    transform: scale(0.81);
+    -webkit-filter: drop-shadow(0px 0px 5px rgb(0, 0, 0));
+}
+
+.xPacButton:active {
+    transform: scale(0.79);
+    -webkit-filter: drop-shadow(0px 0px 0px rgb(0, 0, 0));
 }

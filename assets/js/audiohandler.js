@@ -1,15 +1,24 @@
-var bgSelection = 0;
+var expansion = 8;
 var audioSelect = {
+    'BattleForAzeroth' : './assets/audio/BattleForAzeroth.ogg',
     'Shadowlands' : './assets/audio/Shadowlands.ogg'
 }
-var audio;
+var videoSelect = {
+    'BattleForAzeroth' : './assets/img/bg/BattleForAzeroth.webm',
+    'Shadowlands' : './assets/img/bg/Shadowlands.webm'
+}
+var logoSelect = {
+    'BattleForAzeroth' : './assets/img/ui/logos/BattleForAzeroth.png',
+    'Shadowlands' : './assets/img/ui/logos/Shadowlands.png',
+}
+var audio = new Audio();
 var audioInitialPlayback = false;
 var queuePos = null;
 var disconnected = false;
 
 function init()
 {
-    audio = new Audio(audioSelect.Shadowlands);
+    switchExpansion();
     window.addEventListener('click', waitForInteractionToPlayAudio);
 
     getPositionInQueue();
@@ -23,6 +32,8 @@ function waitForInteractionToPlayAudio()
 {
     if(!audioInitialPlayback)
     {
+        audio.volume = 0.1;
+        audio.loop = true;
         audio.play();
         audioInitialPlayback = true;
     }
@@ -80,4 +91,83 @@ function doDisconnect()
 {
     // disconnected = true;
     // console.log("DC'd")
+}
+
+function manualChangeExpac()
+{
+    console.log("Changing xpac to: ");
+    expansion += 1;
+    if(expansion > 8)
+        expansion = 0;
+    
+    switchExpansion();
+}
+
+function switchExpansion()
+{
+    queuePos = null;
+    getPositionInQueue();
+
+    var bg = document.getElementById('background');
+    var logo = document.getElementById('logo')
+    audio.pause();
+    switch(expansion)
+    {
+        case 0:
+            console.log('Vanilla');
+            expansion = 7;
+            switchExpansion();
+        break;
+
+        case 1:
+            console.log('Burning Crusade');
+            expansion = 7;
+            switchExpansion();
+        break;
+
+        case 2:
+            console.log('Wrath of the Lich King');
+            expansion = 7;
+            switchExpansion();
+        break;
+
+        case 3:
+            console.log('Cataclysm');
+            expansion = 7;
+            switchExpansion();
+        break;
+
+        case 4:
+            console.log('Mists of Pandaria');
+            expansion = 7;
+            switchExpansion();
+        break;
+
+        case 5:
+            console.log('Warlords of Draenor');
+            expansion = 7;
+            switchExpansion();
+        break;
+
+        case 6:
+            console.log('Legion');
+            expansion = 7;
+            switchExpansion();
+        break;
+
+        case 7:
+            console.log('Battle for Azeroth');
+            audio.src = audioSelect.BattleForAzeroth;
+            bg.setAttribute('src', videoSelect.BattleForAzeroth);
+            logo.style.background = `url(${logoSelect.BattleForAzeroth})`;
+        break;
+
+        case 8:
+            console.log('Shadowlands');
+            audio.src = audioSelect.Shadowlands;
+            bg.setAttribute('src', videoSelect.Shadowlands);
+            logo.style.background = `url(${logoSelect.Shadowlands})`;
+        break;
+    }
+    audio.play();
 }
