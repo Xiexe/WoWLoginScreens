@@ -46,16 +46,8 @@ function determineIfDisconnect()
     if(!disconnected)
     {
         var rand = Math.random();
-
-        if(rand > 0.2)
-        {
-            if(rand < 0.75)
-                getPositionInQueue();
-        }
-        else
-        {
-            doDisconnect();
-        }
+        if(rand < 0.75)
+            getPositionInQueue();
     }
 }
 
@@ -72,10 +64,11 @@ function getPositionInQueue()
         number = Math.floor(queuePos - (Math.random() * Math.floor(15)));
         queuePos = number;
 
-        if(queuePos < 1)
+        if(queuePos < 3)
         {
             number = 0;
             queuePos = 0;
+            doDisconnect();
         }
     }
 
@@ -91,8 +84,11 @@ function getEstimatedTime(qPos)
 
 function doDisconnect()
 {
-    // disconnected = true;
-    // console.log("DC'd")
+    hideQueue();
+    showDisconnect();
+    
+    disconnected = true;
+    console.log("DC'd")
 }
 
 function manualChangeExpac()
@@ -178,11 +174,29 @@ function playButtonAudio(index)
 {
     buttonAudio.pause();
     buttonAudio.time = 0;
-    
+
     if(index === 0)
         buttonAudio.src = './assets/audio/ui/button_click.ogg';
     else
         buttonAudio.src = './assets/audio/ui/button_click_big.ogg';
     
     buttonAudio.play();
+}
+
+function hideQueue()
+{
+    var x = document.getElementById("queue");
+    if(x.style.display === "none")
+        x.style.display = "flex";
+    else
+        x.style.display = "none";
+}
+
+function showDisconnect()
+{
+    var x = document.getElementById("disconnectBox");
+    if(x.style.display === "none")
+        x.style.display = "flex";
+    else
+        x.style.display = "none";
 }

@@ -13,11 +13,11 @@
         
         <!--QUIT BUTTON-->
         <div id="quitButtonContainer" class="foreground">
-            <button class="button" onclick="location.href='https://www.wowaholics.org/'; playButtonAudio(0);" > Quit </button>
+            <button class="button" onclick="location.href='http://www.wowaholics.org/'; playButtonAudio(0);" > Quit </button>
         </div>
         
         <!--QUEUE BOX-->
-        <div class="centered">
+        <div class="centered" id="queue">
             <img src="assets/img/ui/queuebox.png" id="queueBox">
             
             <div id="queueTextContainer">
@@ -26,7 +26,19 @@
                 <p class="queueText" id="queueTime">Estimated time: 999 min</p>
             </div>
             
-            <button class="button" id="realmListButton" onclick="playButtonAudio(0);"> Change Realm </button>
+            <button class="button" id="realmListButton" onclick="playButtonAudio(0); doDisconnect();"> Change Realm </button>
+        </div>
+
+        <!--DISCONNECT MESSAGE-->
+        <div class="centered" id="disconnectBox" style="display: none;">
+            <img src="assets/img/ui/queuebox.png" id="queueBox">
+            
+            <div id="queueTextContainer">
+                <p class="queueText">You have been disconnected from the server.</p>
+                <p class="queueText">(WOW51900319)</p>
+            </div>
+            
+            <button class="button" id="realmListButton" onclick="playButtonAudio(1);"> Okay </button>
         </div>
         
         <!--COPYRIGHT TEXT-->

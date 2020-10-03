@@ -30,6 +30,10 @@ html, body {
     width: 720px;
 }
 
+#queue {
+
+}
+
 #queueTextContainer {
     position: fixed;
     margin-bottom: 50px;
@@ -81,7 +85,7 @@ html, body {
     font-size: 22px;
     text-align: center;
     color: #ffc700;
-    text-shadow: 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 3px #000;
+    text-shadow: 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 3px #000, 10px 10px 2px #0000;
 }
 
 .button {
