@@ -7,55 +7,57 @@
         <script src="assets/js/audiohandler.js" type="text/javascript"></script>
     </head>
     <body onload="init();">
-        
-        <!-- LOGO -->
-        <button class="xPacButton" id="logo" onclick="manualChangeExpac(); playButtonAudio(1);"></button>
-        
-        <!--QUIT BUTTON-->
-        <div id="quitButtonContainer" class="foreground">
-            <button class="button" onclick="location.href='http://www.wowaholics.org/'; playButtonAudio(0);" > Quit </button>
-        </div>
-        
-        <!--QUEUE BOX-->
-        <div class="centered" id="queue">
-            <img src="assets/img/ui/queuebox.png" id="queueBox">
+        <div class="noSelect">
+
+            <!-- LOGO -->
+            <button class="xPacButton" id="logo" onclick="manualChangeExpac(); playButtonAudio(1);"></button>
             
-            <div id="queueTextContainer">
-                <p class="queueText">Realm is Full</p>
-                <p class="queueText" id="queuePosition">Position in Queue: 0000</p>
-                <p class="queueText" id="queueTime">Estimated time: 999 min</p>
+            <!--QUIT BUTTON-->
+            <div id="quitButtonContainer" class="foreground">
+                <button class="button" onclick="location.href='http://www.wowaholics.org/'; playButtonAudio(0);" > Quit </button>
             </div>
             
-            <button class="button" id="realmListButton" onclick="playButtonAudio(0); doDisconnect();"> Change Realm </button>
-        </div>
+            <!--QUEUE BOX-->
+            <div class="centered" id="queue">
+                <img src="assets/img/ui/queuebox.png" id="queueBox">
+                
+                <div id="queueTextContainer">
+                    <p class="queueText">Realm is Full</p>
+                    <p class="queueText" id="queuePosition">Position in Queue: 0000</p>
+                    <p class="queueText" id="queueTime">Estimated time: 999 min</p>
+                </div>
+                
+                <button class="button" id="realmListButton" onclick="playButtonAudio(0); doDisconnect();"> Change Realm </button>
+            </div>
 
-        <!--DISCONNECT MESSAGE-->
-        <div class="centered" id="disconnectBox" style="display: none;">
-            <img src="assets/img/ui/queuebox.png" id="queueBox">
-            
-            <div id="queueTextContainer">
-                <p class="queueText">You have been disconnected from the server.</p>
-                <p class="queueText">(WOW51900319)</p>
+            <!--DISCONNECT MESSAGE-->
+            <div class="centered" id="disconnectBox" style="display: none;">
+                <img src="assets/img/ui/queuebox.png" id="queueBox">
+                
+                <div id="queueTextContainer">
+                    <p class="queueText">You have been disconnected from the server.</p>
+                    <p class="queueText">(WOW51900319)</p>
+                </div>
+                
+                <button class="button" id="realmListButton" onclick="playButtonAudio(1);"> Okay </button>
             </div>
             
-            <button class="button" id="realmListButton" onclick="playButtonAudio(1);"> Okay </button>
+            <!--COPYRIGHT TEXT-->
+            <div class="fullWidth">
+                <p id="copyrightText">Copyright 2004-2020 Blizzard Entertainment. All Right Reserved.</p>
+            </div>
+
+            <!--BUILD VER-->
+            <p id="buildVersion">Version 9.0.1 (35944) (Release x64)</p>
+
+            <!--BUILD DATE-->
+            <p id="buildDate">Oct 13 2020</p>
+
+            <!-- BACKGROUND -->
+            <video autoplay muted loop id="background">
+                <source src="assets/img/bg/Shadowlands.webm" type="video/webm">
+            </video>
+            
         </div>
-        
-        <!--COPYRIGHT TEXT-->
-        <div class="fullWidth">
-            <p id="copyrightText">Copyright 2004-2020 Blizzard Entertainment. All Right Reserved.</p>
-        </div>
-
-        <!--BUILD VER-->
-        <p id="buildVersion">Version 9.0.1 (35944) (Release x64)</p>
-
-        <!--BUILD DATE-->
-        <p id="buildDate">Oct 13 2020</p>
-
-        <!-- BACKGROUND -->
-        <video autoplay muted loop id="background">
-            <source src="assets/img/bg/Shadowlands.webm" type="video/webm">
-        </video>
-
     </body>
 </html>

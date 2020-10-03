@@ -106,6 +106,12 @@ function manualChangeExpac()
 
 function switchExpansion()
 {
+    if(disconnected)
+    {
+        disconnected = false;
+        hideQueue();
+        showDisconnect();
+    }
     queuePos = null;
     getPositionInQueue();
 
