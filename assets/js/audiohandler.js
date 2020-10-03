@@ -1,16 +1,19 @@
 var expansion = 8;
 var audioSelect = {
     'Vanilla' : './assets/audio/Vanilla.ogg',
+    'BurningCrusade' : './assets/audio/BurningCrusade.ogg',
     'BattleForAzeroth' : './assets/audio/BattleForAzeroth.ogg',
     'Shadowlands' : './assets/audio/Shadowlands.ogg'
 }
 var videoSelect = {
     'Vanilla' : './assets/img/bg/Vanilla.webm',
+    'BurningCrusade' : './assets/img/bg/BurningCrusade.webm',
     'BattleForAzeroth' : './assets/img/bg/BattleForAzeroth.webm',
     'Shadowlands' : './assets/img/bg/Shadowlands.webm'
 }
 var logoSelect = {
     'Vanilla' : './assets/img/ui/logos/Vanilla.png',
+    'BurningCrusade' : './assets/img/ui/logos/BurningCrusade.png',
     'BattleForAzeroth' : './assets/img/ui/logos/BattleForAzeroth.png',
     'Shadowlands' : './assets/img/ui/logos/Shadowlands.png',
 }
@@ -26,10 +29,7 @@ function init()
     window.addEventListener('click', waitForInteractionToPlayAudio);
 
     getPositionInQueue();
-    setInterval( ()=>
-    {    
-        determineIfDisconnect();
-    }, 5000);
+    setInterval(determineIfDisconnect, 8000);
 }
 
 function waitForInteractionToPlayAudio()
@@ -89,7 +89,7 @@ function doDisconnect()
 {
     hideQueue();
     showDisconnect();
-    
+    playButtonAudio(1);
     disconnected = true;
     console.log("DC'd")
 }
@@ -135,8 +135,12 @@ function switchExpansion()
 
         case 1:
             console.log('Burning Crusade');
-            expansion = 7;
-            switchExpansion();
+            audio.src = audioSelect.BurningCrusade;
+            bg.setAttribute('src', videoSelect.BurningCrusade);
+            logo.style.background = `url(${logoSelect.BurningCrusade})`;
+            version.innerHTML = 'Version 2.4.3 (8606) (Release)';
+            date.innerHTML = 'Jul 10 2008';
+            copyright.innerHTML = 'Copyright 2004-2008 Blizzard Entertainment. All Right Reserved.';
         break;
 
         case 2:
