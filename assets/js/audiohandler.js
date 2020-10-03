@@ -1,13 +1,16 @@
 var expansion = 8;
 var audioSelect = {
+    'Vanilla' : './assets/audio/Vanilla.ogg',
     'BattleForAzeroth' : './assets/audio/BattleForAzeroth.ogg',
     'Shadowlands' : './assets/audio/Shadowlands.ogg'
 }
 var videoSelect = {
+    'Vanilla' : './assets/img/bg/Vanilla.webm',
     'BattleForAzeroth' : './assets/img/bg/BattleForAzeroth.webm',
     'Shadowlands' : './assets/img/bg/Shadowlands.webm'
 }
 var logoSelect = {
+    'Vanilla' : './assets/img/ui/logos/Vanilla.png',
     'BattleForAzeroth' : './assets/img/ui/logos/BattleForAzeroth.png',
     'Shadowlands' : './assets/img/ui/logos/Shadowlands.png',
 }
@@ -34,7 +37,7 @@ function waitForInteractionToPlayAudio()
     if(!audioInitialPlayback)
     {
         buttonAudio.volume = 0.5;
-        audio.volume = 0.1;
+        audio.volume = 0.5;
         audio.loop = true;
         audio.play();
         audioInitialPlayback = true;
@@ -107,14 +110,21 @@ function switchExpansion()
     getPositionInQueue();
 
     var bg = document.getElementById('background');
-    var logo = document.getElementById('logo')
+    var logo = document.getElementById('logo');
+    var version = document.getElementById('buildVersion');
+    var date = document.getElementById('buildDate');
+    var copyright = document.getElementById('copyrightText');
     audio.pause();
     switch(expansion)
     {
         case 0:
             console.log('Vanilla');
-            expansion = 7;
-            switchExpansion();
+            audio.src = audioSelect.Vanilla;
+            bg.setAttribute('src', videoSelect.Vanilla);
+            logo.style.background = `url(${logoSelect.Vanilla})`;
+            version.innerHTML = 'Version 1.12.1 (5875) (Release)';
+            date.innerHTML = 'Sept 19 2006';
+            copyright.innerHTML = 'Copyright 2004-2006 Blizzard Entertainment. All Right Reserved.';
         break;
 
         case 1:
@@ -158,6 +168,9 @@ function switchExpansion()
             audio.src = audioSelect.BattleForAzeroth;
             bg.setAttribute('src', videoSelect.BattleForAzeroth);
             logo.style.background = `url(${logoSelect.BattleForAzeroth})`;
+            version.innerHTML = 'Version 8.3.7 (35662) (Release x64)';
+            date.innerHTML = 'Aug 24 2020';
+            copyright.innerHTML = 'Copyright 2004-2020 Blizzard Entertainment. All Right Reserved.';
         break;
 
         case 8:
@@ -165,6 +178,9 @@ function switchExpansion()
             audio.src = audioSelect.Shadowlands;
             bg.setAttribute('src', videoSelect.Shadowlands);
             logo.style.background = `url(${logoSelect.Shadowlands})`;
+            version.innerHTML = 'Version 9.0.1 (35944) (Release x64)';
+            date.innerHTML = 'Oct 13 2020';
+            copyright.innerHTML = 'Copyright 2004-2020 Blizzard Entertainment. All Right Reserved.';
         break;
     }
     audio.play();

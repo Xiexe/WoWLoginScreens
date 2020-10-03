@@ -2,6 +2,7 @@ html, body {
     margin: 0;
     height: 100%;
     overflow: hidden;
+    
 }
 
 @font-face{
@@ -10,6 +11,7 @@ html, body {
 }
 
 #background {
+    background-color: #000;
     position: fixed;
     right: 0;
     bottom: 0;
@@ -102,6 +104,7 @@ html, body {
     outline: none;
     display: inline-block;
     transform: scale(0.8);
+    filter: drop-shadow(0px 0px 8px #000);
     z-index: 2;
 }
 
@@ -163,12 +166,16 @@ html, body {
     background-color: transparent;
     transform: scale(0.8);
     transition: 0.2s;
+    filter: drop-shadow(0px 0px 6px #000);
+
 }
 
 .xPacButton:hover {
     transform: scale(0.81);
+    filter: drop-shadow(0px 0px 10px #000);
 }
 
 .xPacButton:active {
     transform: scale(0.79);
+    filter: drop-shadow(0px 0px 0px #000);
 }
