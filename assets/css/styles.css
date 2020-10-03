@@ -51,12 +51,22 @@ html, body {
     background-color: transparent;
     width: 650px;
     height: 110px;
-    line-height: 70%;
+    line-height: 50%;
+    z-index: 2;
+}
+
+#dcTextContainer {
+    position: fixed;
+    margin-bottom: 25px;
+    background-color: transparent;
+    width: 650px;
+    height: 110px;
+    line-height: 50%;
     z-index: 2;
 }
 
 #realmListButton{
-    margin-top: 120px;
+    margin-top: 95px;
 }
 
 #copyrightText {
