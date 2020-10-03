@@ -12,6 +12,7 @@ var logoSelect = {
     'Shadowlands' : './assets/img/ui/logos/Shadowlands.png',
 }
 var audio = new Audio();
+var buttonAudio = new Audio();
 var audioInitialPlayback = false;
 var queuePos = null;
 var disconnected = false;
@@ -32,6 +33,7 @@ function waitForInteractionToPlayAudio()
 {
     if(!audioInitialPlayback)
     {
+        buttonAudio.volume = 0.5;
         audio.volume = 0.1;
         audio.loop = true;
         audio.play();
@@ -170,4 +172,17 @@ function switchExpansion()
         break;
     }
     audio.play();
+}
+
+function playButtonAudio(index)
+{
+    buttonAudio.pause();
+    buttonAudio.time = 0;
+    
+    if(index === 0)
+        buttonAudio.src = './assets/audio/ui/button_click.ogg';
+    else
+        buttonAudio.src = './assets/audio/ui/button_click_big.ogg';
+    
+    buttonAudio.play();
 }
