@@ -6,8 +6,8 @@ html, body {
 }
 
 @font-face{
-    font-family: 'FRITZQUAD';
-    src: url('../fonts/FRIZQUAD.TTF');
+    font-family: 'FRIZQT';
+    src: url('../fonts/FRIZQT__.ttf');
 }
 
 .noSelect {
@@ -31,6 +31,7 @@ html, body {
     bottom: 10px;
     right: 10px;
     position: absolute;
+    z-index: 2;
 }
 
 #queueBox {
@@ -67,7 +68,7 @@ html, body {
 }
 
 #copyrightText {
-    font-family: 'FRITZQUAD';
+    font-family: 'FRIZQT';
     font-size: 15px;
     text-align: left;
     color: #ffc700;
@@ -76,7 +77,7 @@ html, body {
 
 #buildDate {
     position: fixed;
-    font-family: 'FRITZQUAD';
+    font-family: 'FRIZQT';
     font-size: 15px;
     text-align: left;
     color: #ffc700;
@@ -88,7 +89,7 @@ html, body {
 
 #buildVersion {
     position: fixed;
-    font-family: 'FRITZQUAD';
+    font-family: 'FRIZQT';
     font-size: 15px;
     text-align: left;
     color: #ffc700;
@@ -99,7 +100,7 @@ html, body {
 }
 
 .queueText {
-    font-family: 'FRITZQUAD';
+    font-family: 'FRIZQT';
     font-size: 22px;
     text-align: center;
     color: #ffc700;
@@ -107,7 +108,7 @@ html, body {
 }
 
 .button {
-    font-family: 'FRITZQUAD';
+    font-family: 'FRIZQT';
     font-size: 23px;
     text-align: center;
     color: #ffc700;
@@ -125,7 +126,7 @@ html, body {
 }
 
 .button:hover {
-    font-family: 'FRITZQUAD';
+    font-family: 'FRIZQT';
     text-align: center;
     color: #ffffff;
     text-shadow: 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000;
@@ -134,7 +135,7 @@ html, body {
 }
 
 .button:active {
-    font-family: 'FRITZQUAD';
+    font-family: 'FRIZQT';
     font-size: 22px;
     text-align: center;
     color: #ffffff;

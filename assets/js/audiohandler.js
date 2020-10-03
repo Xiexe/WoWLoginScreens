@@ -2,18 +2,33 @@ var expansion = 8;
 var audioSelect = {
     'Vanilla' : './assets/audio/Vanilla.ogg',
     'BurningCrusade' : './assets/audio/BurningCrusade.ogg',
+    'WrathOfTheLichKing' : './assets/audio/WrathOfTheLichKing.ogg',
+    'Cataclysm' : './assets/audio/Cataclysm.ogg',
+    'MistsOfPandaria' : './assets/audio/MistsOfPandaria.ogg',
+    'WarlordsOfDraenor' : './assets/audio/WarlordsOfDraenor.ogg',
+    'Legion' : './assets/audio/Legion.ogg',
     'BattleForAzeroth' : './assets/audio/BattleForAzeroth.ogg',
     'Shadowlands' : './assets/audio/Shadowlands.ogg'
 }
 var videoSelect = {
     'Vanilla' : './assets/img/bg/Vanilla.webm',
     'BurningCrusade' : './assets/img/bg/BurningCrusade.webm',
+    'WrathOfTheLichKing' : './assets/img/bg/WrathOfTheLichKing.webm',
+    'Cataclysm' : './assets/img/bg/Cataclysm.webm',
+    'MistsOfPandaria' : './assets/img/bg/MistsOfPandaria.webm',
+    'WarlordsOfDraenor' : './assets/img/bg/WarlordsOfDraenor.webm',
+    'Legion' : './assets/img/bg/Legion.webm',
     'BattleForAzeroth' : './assets/img/bg/BattleForAzeroth.webm',
     'Shadowlands' : './assets/img/bg/Shadowlands.webm'
 }
 var logoSelect = {
     'Vanilla' : './assets/img/ui/logos/Vanilla.png',
     'BurningCrusade' : './assets/img/ui/logos/BurningCrusade.png',
+    'WrathOfTheLichKing' : './assets/img/ui/logos/WrathOfTheLichKing.png',
+    'Cataclysm' : './assets/img/ui/logos/Cataclysm.png',
+    'MistsOfPandaria' : './assets/img/ui/logos/MistsOfPandaria.png',
+    'WarlordsOfDraenor' : './assets/img/ui/logos/WarlordsOfDraenor.png',
+    'Legion' : './assets/img/ui/logos/Legion.png',
     'BattleForAzeroth' : './assets/img/ui/logos/BattleForAzeroth.png',
     'Shadowlands' : './assets/img/ui/logos/Shadowlands.png',
 }
@@ -101,6 +116,8 @@ function manualChangeExpac()
     if(expansion > 8)
         expansion = 0;
     
+    var bg = document.getElementById('background');
+    bg.muted = false;
     switchExpansion();
 }
 
@@ -120,6 +137,7 @@ function switchExpansion()
     var version = document.getElementById('buildVersion');
     var date = document.getElementById('buildDate');
     var copyright = document.getElementById('copyrightText');
+    
     audio.pause();
     switch(expansion)
     {
@@ -145,32 +163,52 @@ function switchExpansion()
 
         case 2:
             console.log('Wrath of the Lich King');
-            expansion = 7;
-            switchExpansion();
+            audio.src = audioSelect.WrathOfTheLichKing;
+            bg.setAttribute('src', videoSelect.WrathOfTheLichKing);
+            logo.style.background = `url(${logoSelect.WrathOfTheLichKing})`;
+            version.innerHTML = 'Version 3.3.5 (12340) (Release)';
+            date.innerHTML = 'Jun 24 2010';
+            copyright.innerHTML = 'Copyright 2004-2010 Blizzard Entertainment. All Right Reserved.';
         break;
 
         case 3:
             console.log('Cataclysm');
-            expansion = 7;
-            switchExpansion();
+            audio.src = audioSelect.Cataclysm;
+            bg.setAttribute('src', videoSelect.Cataclysm);
+            logo.style.background = `url(${logoSelect.Cataclysm})`;
+            version.innerHTML = 'Version 4.3.4 (15595) (Release x86)';
+            date.innerHTML = 'Feb 9 2011';
+            copyright.innerHTML = 'Copyright 2004-2011 Blizzard Entertainment. All Right Reserved.';
         break;
 
         case 4:
             console.log('Mists of Pandaria');
-            expansion = 7;
-            switchExpansion();
+            audio.src = audioSelect.MistsOfPandaria;
+            bg.setAttribute('src', videoSelect.MistsOfPandaria);
+            logo.style.background = `url(${logoSelect.MistsOfPandaria})`;
+            version.innerHTML = 'Version 5.4.8 (18414) (Release x86)';
+            date.innerHTML = 'Jun 13 2014';
+            copyright.innerHTML = 'Copyright 2004-2014 Blizzard Entertainment. All Right Reserved.';
         break;
 
         case 5:
             console.log('Warlords of Draenor');
-            expansion = 7;
-            switchExpansion();
+            audio.src = audioSelect.WarlordsOfDraenor;
+            bg.setAttribute('src', videoSelect.WarlordsOfDraenor);
+            logo.style.background = `url(${logoSelect.WarlordsOfDraenor})`;
+            version.innerHTML = 'Version 6.2.0 (20173) (Release x64)';
+            date.innerHTML = 'Jun 20 2015';
+            copyright.innerHTML = 'Copyright 2004-2015 Blizzard Entertainment. All Right Reserved.';
         break;
 
         case 6:
             console.log('Legion');
-            expansion = 7;
-            switchExpansion();
+            audio.src = audioSelect.Legion;
+            bg.setAttribute('src', videoSelect.Legion);
+            logo.style.background = `url(${logoSelect.Legion})`;
+            version.innerHTML = 'Version 7.3.5 (26365) (Release x64)';
+            date.innerHTML = 'Apr 3 2018';
+            copyright.innerHTML = 'Copyright 2004-2018 Blizzard Entertainment. All Right Reserved.';
         break;
 
         case 7:
