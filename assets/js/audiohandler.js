@@ -264,3 +264,10 @@ function showDisconnect()
     else
         x.style.display = "none";
 }
+
+function resetQueue()
+{
+    disconnected = false;
+    showDisconnect();
+    hideQueue();
+}
