@@ -59,8 +59,6 @@ var audioInitialPlayback = false;
 var queuePos = null;
 var disconnected = false;
 
-document.onmousemove = updateCursorPosition;
-
 function init()
 {
     switchExpansion();
@@ -228,17 +226,6 @@ function showSettings()
     {
         opt.style.display = "none";
     }
-}
-
-function updateCursorPosition(e)
-{
-    if(cursor === undefined)
-    {
-        cursor = document.getElementById("cursor");
-        console.log('Setting cursor');
-    }
-    cursor.style.top = e.y + 'px';
-    cursor.style.left = e.x + 'px';
 }
 
 function adjustVolume()
