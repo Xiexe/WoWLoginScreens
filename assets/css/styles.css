@@ -266,6 +266,7 @@ html, body {
     cursor: pointer;
     transform: scale(1.6);
     border: none;
+    z-index: 4;
 }
   
 .slider::-moz-range-thumb {
@@ -275,4 +276,5 @@ html, body {
     cursor: pointer;
     transform: scale(1.6);
     border: none;
+    z-index: 4;
 }
