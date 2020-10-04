@@ -58,6 +58,10 @@ html, body {
     margin-top: 95px;
 }
 
+#disconButton{
+    margin-top: 95px;
+}
+
 #copyrightText {
     font-family: 'FRIZQT';
     font-size: 15px;
@@ -171,6 +175,45 @@ html, body {
     background: url('../img/ui/buttons/button_pressed.png') no-repeat top;
 }
 
+.button_b {
+    font-family: 'FRIZQT';
+    font-size: 23px;
+    text-align: center;
+    color: #ffc700;
+    text-shadow: 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000;
+
+    background: url('../img/ui/buttons/button_idle_b.png') no-repeat top;
+    width: 270px;
+    height: 71px;
+    border: none;
+    outline: none;
+    display: block;
+    margin-top: -25px;
+    transform: scale(0.8);
+    filter: drop-shadow(0px 0px 8px #000);
+    z-index: 2;
+	cursor: url('../img/ui/Point.png'), auto;
+}
+
+.button_b:hover {
+    font-family: 'FRIZQT';
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000;
+
+    background: url('../img/ui/buttons/button_hover_b.png') no-repeat top;
+}
+
+.button_b:active {
+    font-family: 'FRIZQT';
+    font-size: 22px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000;
+
+    background: url('../img/ui/buttons/button_pressed_b.png') no-repeat top;
+}
+
 .centered {
     min-height: 100vh;
     display:flex;
@@ -249,6 +292,7 @@ html, body {
     background: transparent;
     border: 8px solid;
     border-image: url('../img/ui/UI_SliderBorder.png') 35% round;
+    cursor: url('../img/ui/Point.png'), auto;
     outline: none;
     opacity: 1;
     -webkit-transition: .2s;
@@ -266,7 +310,7 @@ html, body {
     width: 32px;
     height: 32px;
     background: url('../img/ui/UI_SliderHandle.png');
-    cursor: url('../img/ui/Point.png'), auto;
+    cursor: url('../img/ui/Cast.png'), auto;
     transform: scale(1.6);
     border: none;
     z-index: 4;
@@ -276,7 +320,7 @@ html, body {
     width: 32px;
     height: 32px;
     background: url('../img/ui/UI_SliderHandle.png');
-    cursor: url('../img/ui/Point.png'), auto;
+    cursor: url('../img/ui/Cast.png'), auto;
     transform: scale(1.6);
     border: none;
     z-index: 4;

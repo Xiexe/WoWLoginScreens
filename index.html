@@ -8,14 +8,14 @@
     </head>
     <body onload="init();">
         <div class="noSelect">
-            
+
             <!-- LOGO -->
             <button class="xPacButton" id="logo" onclick="manualChangeExpac(); playButtonAudio(1);"></button>
             
-            <!--QUIT BUTTON-->
+            <!--QUIT BUTTON AND OPTIONS BUTTON-->
             <div id="quitButtonContainer" class="foreground">
-                <button class="button" onclick="playButtonAudio(0); showSettings();" > Options </button>
-                <button class="button" onclick="location.href='http://www.wowaholics.org/'; playButtonAudio(0);" > Quit </button>
+                <button id="optButton" class="button" onclick="playButtonAudio(0); showSettings();" > Options </button>
+                <button id="quitButton" class="button" onclick="location.href='http://www.wowaholics.org/'; playButtonAudio(0);" > Quit </button>
             </div>
             
             <!--OPTIONS PANEL-->
@@ -53,7 +53,7 @@
                     <p class="queueText">(WOW51900319)</p>
                 </div>
                 
-                <button class="button" id="realmListButton" onclick="playButtonAudio(1); resetQueue();"> Okay </button>
+                <button class="button" id="disconButton" onclick="playButtonAudio(1); resetQueue();"> Okay </button>
             </div>
 
             <!--COPYRIGHT TEXT-->

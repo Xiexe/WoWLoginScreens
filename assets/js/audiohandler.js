@@ -40,6 +40,18 @@ var dateMap = [
     'Oct 13 2020'
 ];
 
+var buttonColorMap = [
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+];
+
 var copyMap = [
     2006,
     2008,
@@ -171,6 +183,8 @@ function switchExpansion()
     version.textContent = verMap[expansion];
     date.textContent = dateMap[expansion];
     copyright.textContent = `Copyright 2004-${copyMap[expansion]} Blizzard Entertainment. All Right Reserved.`;
+    setButtonColors(buttonColorMap[expansion]);
+    
     bg.load();
     bg.play();
     audio.play();
@@ -235,4 +249,28 @@ function adjustVolume()
     audio.volume = val;
     buttonAudio.volume = val;
     document.getElementById('background').volume = val;
+}
+
+function setButtonColors(index)
+{
+    var quitButton = document.getElementById("quitButton");
+    var optButton = document.getElementById("optButton");
+    var realmListButton = document.getElementById("realmListButton");
+    var disconButton = document.getElementById("disconButton");
+    switch(index)
+    {
+        case 0:
+            quitButton.className = "button";
+            optButton.className = "button";
+            realmListButton.className = "button";
+            disconButton.className = "button";
+        break;
+
+        case 1:
+            quitButton.className = "button_b";
+            optButton.className = "button_b";
+            realmListButton.className = "button_b";
+            disconButton.className = "button_b";
+        break;
+    }
 }
