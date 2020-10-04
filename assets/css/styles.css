@@ -254,7 +254,7 @@ html, body {
 }
 
 .slider:hover {
-    opacity: 1; /* Fully shown on mouse-over */
+    opacity: 1;
 }
   
 .slider::-webkit-slider-thumb {
@@ -265,6 +265,7 @@ html, body {
     background: url('../img/ui/UI_SliderHandle.png');
     cursor: pointer;
     transform: scale(1.6);
+    border: none;
 }
   
 .slider::-moz-range-thumb {
@@ -273,4 +274,5 @@ html, body {
     background: url('../img/ui/UI_SliderHandle.png');
     cursor: pointer;
     transform: scale(1.6);
+    border: none;
 }

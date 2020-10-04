@@ -221,9 +221,13 @@ function showSettings()
 {
     var opt = document.getElementById("options");
     if(opt.style.display == "none")
+    {
         opt.style.display = "flex";
+    }
     else
+    {
         opt.style.display = "none";
+    }
 }
 
 function updateCursorPosition(e)
