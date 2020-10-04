@@ -52,11 +52,14 @@ var copyMap = [
     2020
 ];
 
+var cursor;
 var audio = new Audio();
 var buttonAudio = new Audio();
 var audioInitialPlayback = false;
 var queuePos = null;
 var disconnected = false;
+
+document.onmousemove = updateCursorPosition;
 
 function init()
 {
@@ -173,6 +176,7 @@ function switchExpansion()
     bg.load();
     bg.play();
     audio.play();
+    
 }
 
 function playButtonAudio(index)
@@ -211,4 +215,33 @@ function resetQueue()
     disconnected = false;
     showDisconnect();
     hideQueue();
+}
+
+function showSettings()
+{
+    var opt = document.getElementById("options");
+    if(opt.style.display == "none")
+        opt.style.display = "flex";
+    else
+        opt.style.display = "none";
+}
+
+function updateCursorPosition(e)
+{
+    if(cursor === undefined)
+    {
+        cursor = document.getElementById("cursor");
+        console.log('Setting cursor');
+    }
+    cursor.style.top = e.y + 'px';
+    cursor.style.left = e.x + 'px';
+}
+
+function adjustVolume()
+{
+    var slider = document.getElementById("volumeSlider");
+    var val = slider.value * 0.01;
+    audio.volume = val;
+    buttonAudio.volume = val;
+    document.getElementById('background').volume = val;
 }

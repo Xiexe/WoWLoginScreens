@@ -2,7 +2,6 @@ html, body {
     margin: 0;
     height: 100%;
     overflow: hidden;
-    
 }
 
 @font-face{
@@ -32,12 +31,6 @@ html, body {
     right: 10px;
     position: absolute;
     z-index: 2;
-}
-
-
-
-#queue {
-
 }
 
 #queueTextContainer {
@@ -96,10 +89,28 @@ html, body {
     left: 10px;
 }
 
+#cursor {
+    z-index: 5;
+    position: fixed;
+    top: -50px;
+    left: 0px;
+    width: 32px;
+    height: 32px;
+    pointer-events: none;
+}
+
 .queueText {
     font-family: 'FRIZQT';
     font-size: 22px;
     text-align: center;
+    color: #ffc700;
+    text-shadow: 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 3px #000, 10px 10px 2px #0000;
+}
+
+.text {
+    font-family: 'FRIZQT';
+    font-size: 14px;
+    text-align: left;
     color: #ffc700;
     text-shadow: 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 3px #000, 10px 10px 2px #0000;
 }
@@ -109,6 +120,7 @@ html, body {
     border: 40px solid;
     border-image: url('../img/ui/UI_BorderAtlas.png') 40% round;
     z-index: 1;
+    pointer-events: none;
 }
 
 .UIBoxBackground 
@@ -116,6 +128,7 @@ html, body {
     position: fixed;
     background-color: rgba(0, 0, 0, 0.75);
     z-index: 0;
+    pointer-events: none;
 }
 
 .button {
@@ -130,7 +143,8 @@ html, body {
     height: 71px;
     border: none;
     outline: none;
-    display: inline-block;
+    display: block;
+    margin-top: -25px;
     transform: scale(0.8);
     filter: drop-shadow(0px 0px 8px #000);
     z-index: 2;
@@ -174,6 +188,7 @@ html, body {
     width: 100%;
     height: 40px;
     z-index: 2;
+    pointer-events: none;
 }
 
 .fullScreen
@@ -204,7 +219,6 @@ html, body {
     transform: scale(0.65);
     transition: 0.2s;
     filter: drop-shadow(0px 0px 6px #000);
-
 }
 
 .xPacButton:hover {
@@ -215,4 +229,48 @@ html, body {
 .xPacButton:active {
     transform: scale(0.64);
     filter: drop-shadow(0px 0px 0px #000);
+}
+
+.slidecontainer {
+    width: 450px;
+    z-index: 4;
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 50%;
+    height: 1px;
+    padding: 0px;
+    margin-left: 50%;
+    background: transparent;
+    border: 8px solid;
+    border-image: url('../img/ui/UI_SliderBorder.png') 35% round;
+    outline: none;
+    opacity: 1;
+    -webkit-transition: .2s;
+    transition: .2s;
+    transform: scale(0.8);
+}
+
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+  
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 32px;
+    height: 32px;
+    background: url('../img/ui/UI_SliderHandle.png');
+    cursor: pointer;
+    transform: scale(1.6);
+}
+  
+.slider::-moz-range-thumb {
+    width: 32px;
+    height: 32px;
+    background: url('../img/ui/UI_SliderHandle.png');
+    cursor: pointer;
+    transform: scale(1.6);
 }

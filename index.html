@@ -8,15 +8,28 @@
     </head>
     <body onload="init();">
         <div class="noSelect">
+            <img src="assets/img/ui/Point.png" id="cursor">
 
             <!-- LOGO -->
             <button class="xPacButton" id="logo" onclick="manualChangeExpac(); playButtonAudio(1);"></button>
             
             <!--QUIT BUTTON-->
             <div id="quitButtonContainer" class="foreground">
+                <button class="button" onclick="playButtonAudio(0); showSettings();" > Options </button>
                 <button class="button" onclick="location.href='http://www.wowaholics.org/'; playButtonAudio(0);" > Quit </button>
             </div>
             
+            <!--OPTIONS PANEL-->
+            <div class="centered" id="options" style="display: none;">
+                <div class="UIBox" style="width: 450px; height: 15px;"></div>
+                <div class="UIBoxBackground" style="width: 500px; height: 75px;"></div>
+
+                <div class="slidecontainer">
+                    <p class="text" style="position: fixed; margin-top: 0%;">Sound</p>
+                    <input type="range" min="1" max="100" value="50" class="slider" id="volumeSlider" oninput="adjustVolume();">
+                </div>
+            </div>
+
             <!--QUEUE BOX-->
             <div class="centered" id="queue">
                 <div class="UIBox" style="width: 450px; height: 100px;"></div>
@@ -43,7 +56,7 @@
                 
                 <button class="button" id="realmListButton" onclick="playButtonAudio(1); resetQueue();"> Okay </button>
             </div>
-            
+
             <!--COPYRIGHT TEXT-->
             <div class="fullWidth">
                 <p id="copyrightText">Copyright 2004-2020 Blizzard Entertainment. All Right Reserved.</p>
